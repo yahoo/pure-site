@@ -59,9 +59,16 @@ h1,h2,h3,h4,h5,h6 {
         margin: 1.3em 0 1em;
     }
     /* The rainbow styles will overwrite the border and background styles */
-    pre code {
+    .content pre code {
         background: none;
         border: none;
+        font-size: 1em;
+    }
+
+    .content code {
+        font-size: 0.8em;
+        border: none;
+        padding: 0.4em 0.6em;
     }
 
 /* Apply the .box class on the immediate parent of any grid element (yui3-u-*) to apply some padding. */
