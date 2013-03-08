@@ -16,5 +16,7 @@ module.exports = Object.freeze({
     }),
 
     typekit: 'ajf8ggy',
-    yui    : require('./yui')
+    yui    : require('./yui'),
+    extras : require('./extras'),
+    github : require('./github.json')
 });
