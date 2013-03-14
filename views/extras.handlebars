@@ -1,0 +1,20 @@
+{{setTitle     "Extras"}}
+{{setSubTitle  "Add-ons built on YUI CSS"}}
+{{setActiveNav "extras"}}
+
+{{addCdnCSS "3.9.0pr3" "cssnormalize"}}
+{{addGithubCSS "tilomitra" "csstables" "master/css/tables.css"}}
+
+{{> header}}
+
+<div class="content">
+
+<div class="yui3-g-r">
+    {{#each results}}
+        <div class="extras-module yui3-u-1-3">
+            <img src="{{this.owner.avatar_url}}"/>
+        </div>
+    {{/each}}
+</div>
+
+</div>

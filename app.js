@@ -30,7 +30,8 @@ app.locals({
         {id: 'grids',  url: '/grids/',  label: 'Grids'},
         {id: 'forms',  url: '/forms/',  label: 'Forms'},
         {id: 'tables', url: '/tables/', label: 'Tables'},
-        {id: 'lists',  url: '/lists/',  label: 'Navigation'}
+        {id: 'lists',  url: '/lists/',  label: 'Navigation'},
+        {id: 'extras',  url: '/extras/',  label: 'Extras'}
     ],
 
     yui    : config.yui,
@@ -68,6 +69,7 @@ app.get('/grids/',  routes.render('grids'));
 app.get('/forms/',  routes.render('forms'));
 app.get('/tables/', routes.render('tables'));
 app.get('/lists/',  routes.render('lists'));
+app.get('/extras/', routes.extras);
 
 // -- Exports ------------------------------------------------------------------
 
