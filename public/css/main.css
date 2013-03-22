@@ -44,9 +44,16 @@ h1,h2,h3,h4,h5,h6 {
 .l-box {
     padding: 1.3em;
 }
+
+.l-hbox {
+    padding: 0 1.3em;
+}
+
 .l-centered {
     text-align: center;
 }
+
+
 
 
 
@@ -85,6 +92,7 @@ aside {
   * Content Module Styles
   * --------------------------
  */
+
 /* The content div is placed as a wrapper around all the docs */
 .content {
     margin: 0 auto;
@@ -136,6 +144,8 @@ aside {
         border-left: 5px solid #ddd;
         padding-left: 1.5em;
     }
+
+
 
 /* --------------------------
  * Footer Module Styles
@@ -318,8 +328,8 @@ a.plain-button {
         text-align: center;
     }
 
-    /* reduce padding so there's not as much empty whitespace */
-    .l-box {
-        padding: 0.7em;
+    /* normalize paddings on small screens*/
+    .l-hbox {
+        padding: 1.3em;
     }
 }
