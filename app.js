@@ -11,7 +11,7 @@ var express = require('express'),
 
 // -- Config -------------------------------------------------------------------
 
-app.set('name', 'YUI CSS');
+app.set('name', 'Pure');
 app.set('env', config.env);
 app.set('port', config.port);
 app.enable('strict routing');
@@ -21,7 +21,7 @@ app.set('view engine', hbs.extname);
 app.set('views', config.dirs.views);
 
 app.locals({
-    site          : 'YUI CSS',
+    site          : 'Pure',
     copyright_year: '2013',
 
     nav  : [],
@@ -32,8 +32,9 @@ app.locals({
 
     min: config.isProduction ? '-min' : '',
 
-    yui    : config.yui,
-    typekit: config.typekit
+    yui     : config.yui,
+    typekit : config.typekit,
+    pure    : config.pure
 });
 
 // -- Middleware ---------------------------------------------------------------
@@ -75,13 +76,16 @@ function routePage(id, path, label, callbacks) {
     }
 }
 
-routePage('home',    '/',         'Home',    routes.render('home'));
-routePage('base',    '/base/',    'Base',    routes.render('base'));
-routePage('grids',   '/grids/',   'Grids',   routes.render('grids'));
-routePage('forms',   '/forms/',   'Forms',   routes.render('forms'));
-routePage('tables',  '/tables/',  'Tables',  routes.render('tables'));
-routePage('menus',   '/menus/',   'Menus',   routes.render('menus'));
-routePage('layouts', '/layouts/', 'Layouts', routes.render('layouts'));
+routePage('home',       '/',                         routes.render('home'));
+routePage('base',       '/base/',       'Base',      routes.render('base'));
+routePage('grids',      '/grids/',      'Grids',     routes.render('grids'));
+routePage('forms',      '/forms/',      'Forms',     routes.render('forms'));
+routePage('buttons',    '/buttons/',    'Buttons',   routes.render('buttons'));
+routePage('tables',     '/tables/',     'Tables',    routes.render('tables'));
+routePage('menus',      '/menus/',      'Menus',     routes.render('menus'));
+routePage('customize',  '/customize/',  'Customize', routes.render('customize'));
+routePage('layouts',    '/layouts/',    'Layouts',   routes.render('layouts'));
+
 
 routePage('layoutsGallery',   '/layouts/gallery/',   routes.render('layouts/gallery', 'blank'));
 routePage('layoutsMarketing', '/layouts/marketing/', routes.render('layouts/marketing', 'blank'));
@@ -91,5 +95,4 @@ routePage('layoutsEmail',     '/layouts/email/',     routes.render('layouts/emai
 app.get('/combo', routes.combo);
 
 // -- Exports ------------------------------------------------------------------
-
 module.exports = app;

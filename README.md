@@ -1,7 +1,7 @@
-YUI CSS Website
-===============
+Pure CSS Website
+================
 
-The website which showcases YUI's CSS offering.
+The website which showcases Pure CSS.
 
 Running Locally
 ---------------

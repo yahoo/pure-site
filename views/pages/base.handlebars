@@ -1,20 +1,14 @@
-{{setTitle     "Normalize.css"}}
-{{setSubTitle  "A modern, HTML5-ready alternative to CSS resets"}}
+{{setTitle     "Base"}}
+{{setSubTitle  "Leveraging Normalize.css, an HTML5-ready alternative to CSS resets"}}
 {{setActiveNav "base"}}
-
-{{addCdnCSS yui.gallery "gallerycss-csstable"}}
 
 {{> header}}
 
 <div class="content">
     <h2 class="content-subhead">The Foundation</h2>
     <p>
-        All modules in YUI CSS build on top of <a href="http://necolas.github.com/normalize.css/">Normalize.css</a>. It's our foundational layer to maintain some degree of cross-browser consistency. We use Normalize v1.10 because it supports older versions of Internet Explorer. We like Normalize so much that we put it on our CDN. You can pull in Normalize.css by adding this {{code "<link>"}} element on your page:
+        All modules in Pure build on top of <a href="http://necolas.github.com/normalize.css/">Normalize.css</a>. It's our foundational layer to maintain some degree of cross-browser consistency. We use Normalize v1.10 because it supports older versions of Internet Explorer. We like Normalize so much that we put it on our CDN. You can pull in Normalize.css by adding this {{code "<link>"}} element on your page:
     </p>
-
-  {{#code}}
-    <link rel="stylesheet" href="http://yui.yahooapis.com/{{yui.version}}/build/cssnormalize/cssnormalize-min.css">
-  {{/code}}
 
     <h3>A bit about Normalize.css</h3>
     <p>
@@ -22,17 +16,16 @@
     </p>
 
     <blockquote class="content-quote">
-        Normalize.css is a small CSS file that provides better cross-browser consistency in the default styling of HTML elements. It’s a modern, HTML5-ready, alternative to the traditional CSS reset." We use it liberally in YUI CSS.
+        Normalize.css is a small CSS file that provides better cross-browser consistency in the default styling of HTML elements. It’s a modern, HTML5-ready, alternative to the traditional CSS reset."
     </blockquote>
 
     <p>
-        Normalize.css comes with <a href="https://github.com/necolas/normalize.css/wiki">great documentation</a>, and a <a href="http://nicolasgallagher.com/about-normalize-css/">thorough guide</a> explaining how it differs from a traditional Reset. You can also check out YUI's <a href="http://yuilibrary.com/yui/docs/cssnormalize/">CSSNormalize</a> module, that includes the generic Normalize along with a <a href="http://yuilibrary.com/yui/docs/cssnormalize/#context">contextual version</a>.
+        Normalize.css comes with <a href="https://github.com/necolas/normalize.css/wiki">great documentation</a> and a <a href="http://nicolasgallagher.com/about-normalize-css/">thorough guide</a> explaining how it differs from a traditional reset. You can also check out YUI's <a href="http://yuilibrary.com/yui/docs/cssnormalize/">CSSNormalize</a> module, which includes the generic Normalize along with a <a href="http://yuilibrary.com/yui/docs/cssnormalize/#context">contextual version</a>. The contextual version of Normalize only applies normalized styles to elements that are a children of an element with the class name {{code "yui3-normalized"}}.
     </p>
-
 
     <h2 class="content-subhead">Typography</h2>
     <p>
-        To keep YUI CSS lean and extensible, we do not add any typographic styles over the foundational layer provided by Normalize. This means that you get headings with different sizes, blockquotes, lists, definition lists and more, but their styles are minimal and easy to over-ride.
+        To keep Pure lean and extensible, we do not add any typographic styles over the foundational layer provided by Normalize. This means that you get headings with different sizes, blockquotes, lists, definition lists and more, but their styles are minimal and easy to override.
     </p>
 
 

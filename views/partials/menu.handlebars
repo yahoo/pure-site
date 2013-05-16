@@ -1,15 +1,15 @@
-<div class="yui3-u" id="menu">
-    <div class="yui3-menu yui3-menu-open">
-        <a class="yui3-menu-heading" href="{{pages.home}}">YUI CSS</a>
+<div class="pure-u" id="menu">
+    <div class="pure-menu pure-menu-open">
+        <a class="pure-menu-heading" href="{{pages.home}}">Pure</a>
 
-        <a href="#menu" id="menuLink" class="yui3-menu-link">
+        <a href="#menu" id="menuLink" class="pure-menu-link">
             <img src="/img/navicon-png2x.png" width="20"
                  alt="Menu toggle">
         </a>
 
         <ul>
           {{#each nav}}
-            <li class="{{#if isActive}}yui3-menu-selected{{/if}}">
+            <li class="{{#if isActive}}pure-menu-selected{{/if}}">
                 <a href="{{url}}">{{label}}</a>
             </li>
           {{/each}}
