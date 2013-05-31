@@ -100,6 +100,8 @@ routePage('menus',     '/menus/',     'Menus',     routes.render('menus'));
 routePage('customize', '/customize/', 'Customize', routes.render('customize'));
 routePage('extend',    '/extend/',    'Extend',    routes.render('extend'));
 routePage('layouts',   '/layouts/',   'Layouts',   routes.render('layouts'));
+routePage('purefun',   '/purefun/',   'Pure Fun',   routes.render('pureFun'));
+
 
 routePage('layoutsGallery',   '/layouts/gallery/',   routes.render('layouts/gallery', 'blank'));
 routePage('layoutsMarketing', '/layouts/marketing/', routes.render('layouts/marketing', 'blank'));
