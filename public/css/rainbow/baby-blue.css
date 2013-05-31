@@ -17,6 +17,7 @@ code {
     margin: 0 2px;
     font-size: 0.8em;
     padding: 0.4em 0.6em;
+    white-space: nowrap;
 }
 
 pre code {
