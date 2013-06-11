@@ -37,17 +37,18 @@ a {
 }
 
 /* HELPER CLASSES */
-a.primary-button, a.secondary-button {
+.primary-button,
+.secondary-button {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
-a.primary-button {
+.primary-button {
     color: #fff;
     background: #1b98f8;
     margin: 1em 0;
 }
-a.secondary-button {
+.secondary-button {
     background: #fff;
     border: 1px solid #ddd;
     color: #666;
@@ -63,7 +64,8 @@ a.secondary-button {
     border: none;
     text-align: left;
 }
-    #nav .pure-menu a:hover {
+    #nav .pure-menu a:hover,
+    #nav .pure-menu a:focus {
         background: rgb(55, 60, 90);
     }
     #nav .pure-menu a {
