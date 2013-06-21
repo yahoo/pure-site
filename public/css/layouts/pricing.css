@@ -9,7 +9,7 @@ body {
 }
 
 .banner {
-	margin-bottom: 3.125em;
+	margin-bottom: 1.25em;
    	text-align: center;
 }
 
@@ -23,7 +23,7 @@ body {
 }
 
 .pricing-table{
-	margin-bottom: 3.125em;
+	margin-bottom: 1.25em;
 	padding: 10px;
 	overflow: hidden;
 	text-align: center;
@@ -38,7 +38,7 @@ body {
 }
 
 .second-pricing-column {
-	margin: 0 -3.75em;
+	margin: 0 -3.75em 0.9375em -3.75em;
 	z-index: 1;
 	box-shadow: 0 1px 10px #bbb;
 	filter: 
