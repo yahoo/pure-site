@@ -4,8 +4,8 @@ body {
 
 #header {
 	border-bottom: solid 1px #ccc;
-	padding-top: 0.625em;
-	padding-bottom: 0.625em;
+	padding: 0.625em 0;
+	height: auto;
 }
 
 .banner {
@@ -23,47 +23,55 @@ body {
 }
 
 .pricing-table{
-	margin: 0 auto;
 	margin-bottom: 3.125em;
+	padding: 10px;
+	overflow: hidden;
 	text-align: center;
 }
 
-.left, .mid, .right {
+.first-pricing-column, .second-pricing-column, .third-pricing-column {
 	width: 18.75em;
 	background: #fff;
 	position: relative;
-	display: inline-block;
 	vertical-align: top;
 	border-radius: 10px;
+	filter: 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=0, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=45, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=90, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=135, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=180, strength=10), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=225, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=270, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=315, strength=5);
 }
 
-.mid {
-	margin: 0 -3.75em 0 -3.75em;
+.second-pricing-column {
+	margin: 0 -3.75em;
 	z-index: 1;
-	box-shadow: 0 2px 15px #bbb;
+	box-shadow: 0 1px 10px #bbb;
 }
 
-.left, .right {
-	margin-top: 3.625em;
+.first-pricing-column, .third-pricing-column {
+	margin-top: 3.695em;
 	position: relative;
 	z-index: 0;
 	box-shadow: 0 2px 5px #ccc;
 }
 
-.left ul, .mid ul, .right ul {
+.first-pricing-column ul, .second-pricing-column ul, .third-pricing-column ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
 
-.pricing-table .left .header, .pricing-table .mid .header, .pricing-table .right .header {
+.pricing-table .first-pricing-column .header, .pricing-table .second-pricing-column .header, .pricing-table .third-pricing-column .header {
 	background: #ccc;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-radius: 10px 10px 0 0;
 }
 
-.pricing-table .left li, .pricing-table .mid li, .pricing-table .right li {
+.pricing-table .first-pricing-column li, .pricing-table .second-pricing-column li, .pricing-table .third-pricing-column li {
 	padding: 1.25em 0;
 }
 
@@ -81,7 +89,7 @@ body {
 }
 
 .column-content {
-	width: 960px;
+	width: 80%;
 	margin: 0 auto;
 	padding: 0 0.625em;
 }
@@ -93,34 +101,57 @@ body {
 	border: solid 1px #ccc;
 }
 
-@media(max-width: 965px) {
+@media(max-width: 800px) {
+
+	.first-pricing-column, .second-pricing-column, .third-pricing-column {
+		margin: 0 auto;
+	}
+
+	.first-pricing-column {
+		margin-top: 3.625em;
+	}
+
+	.second-pricing-column {
+		margin-left: -3.75em;
+	}
+	
+	.third-pricing-column {
+		margin: 0px auto;
+		margin-top: 3.625em;
+		display: block;
+	}
+}
+
+@media(max-width: 767px) {
+
+	.column-content p {
+		margin-bottom: 1.25em;
+	}
+
+}
+
+@media(max-width: 619px) {
+	
+	.first-pricing-column, .second-pricing-column, .third-pricing-column {
+		margin: 0 auto;
+		display: block;
+	}
+
+	.first-pricing-column {
+		margin-top: 0;
+	}
+
+	.second-pricing-column, .third-pricing-column {
+		margin-top: 3.625em;
+	}
 	
 	.column-content {
 		width: 95%;
 	}
 	
 	.column-content p {
-		margin-bottom: 1.25em;
-	}
-
-}
-
-@media(max-width: 490px) {
-	
-	.left {
-		margin-top: 0;
-	}
-	
-	.pricing-table .mid {
-		margin-top: 3.625em;
-	}
-	
-	.column-content {
-		width: 360px;
-	}
-	
-	.column-content p {
-		margin-bottom: 1.25em;
+		margin-bottom: 1.25em; 
 	}
 	
 }
+

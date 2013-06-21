@@ -37,9 +37,11 @@ app.locals({
 
     isDevelopment: config.isDevelopment,
     isProduction : config.isProduction,
+    isPureLocal  : !!config.pure.local,
 
     min: config.isProduction ? '-min' : '',
 
+    ga     : config.isProduction && config.ga,
     typekit: config.typekit
 });
 
@@ -53,8 +55,14 @@ app.use(express.compress());
 app.use(express.favicon(path.join(config.dirs.pub, 'favicon.ico')));
 app.use(app.router);
 app.use(middleware.slash);
+
+if (config.pure.local) {
+    console.log('Serving Pure from:', config.pure.local);
+    app.use('/css/pure/', express.static(config.pure.local));
+}
+
 app.use(express.static(config.dirs.pub));
-app.use(middleware.errors.notfound);
+app.use(middleware.notfound);
 
 if (config.isDevelopment) {
     app.use(express.errorHandler({
@@ -62,7 +70,7 @@ if (config.isDevelopment) {
         showStack     : true
     }));
 } else {
-    app.use(middleware.errors.server);
+    app.use(middleware.error);
 }
 
 // -- Routes -------------------------------------------------------------------
@@ -100,10 +108,12 @@ routePage('menus',     '/menus/',     'Menus',     routes.render('menus'));
 routePage('customize', '/customize/', 'Customize', routes.render('customize'));
 routePage('extend',    '/extend/',    'Extend',    routes.render('extend'));
 routePage('layouts',   '/layouts/',   'Layouts',   routes.render('layouts'));
+routePage('updates',   '/updates/',   'Updates',   routes.render('updates'));
 
 routePage('layoutsGallery',   '/layouts/gallery/',   routes.render('layouts/gallery', 'blank'));
 routePage('layoutsMarketing', '/layouts/marketing/', routes.render('layouts/marketing', 'blank'));
 routePage('layoutsEmail',     '/layouts/email/',     routes.render('layouts/email', 'blank'));
+routePage('layoutsBlog',      '/layouts/blog/',      routes.render('layouts/blog', 'blank'));
 routePage('layoutsPricing',   '/layouts/pricing/',   routes.render('layouts/pricing', 'blank'));
 
 app.get('/combo/:version', [
