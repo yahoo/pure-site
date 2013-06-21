@@ -35,21 +35,21 @@ body {
 	position: relative;
 	vertical-align: top;
 	border-radius: 10px;
-	filter: 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=0, strength=5), 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=45, strength=5), 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=90, strength=5), 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=135, strength=5), 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=180, strength=10), 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=225, strength=5), 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=270, strength=5), 
-  progid:DXImageTransform.Microsoft.Shadow(color=#bbb, direction=315, strength=5);
 }
 
 .second-pricing-column {
 	margin: 0 -3.75em;
 	z-index: 1;
 	box-shadow: 0 1px 10px #bbb;
+	filter: 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=0, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=45, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=90, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=135, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=180, strength=10), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=225, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=270, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#bbbbbb, direction=315, strength=5);
 }
 
 .first-pricing-column, .third-pricing-column {
@@ -57,6 +57,15 @@ body {
 	position: relative;
 	z-index: 0;
 	box-shadow: 0 2px 5px #ccc;
+	filter: 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=0, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=45, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=90, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=135, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=180, strength=10), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=225, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=270, strength=5), 
+  progid:DXImageTransform.Microsoft.Shadow(color=#cccccc, direction=315, strength=5);
 }
 
 .first-pricing-column ul, .second-pricing-column ul, .third-pricing-column ul {
