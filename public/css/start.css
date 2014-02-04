@@ -1,0 +1,72 @@
+.pure-form label {
+    font-size: 100%;
+}
+.yui3-tabview-panel {
+    padding: 1em;
+    margin-top: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.075);
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.yui3-tab-label, .yui3-tab-label:visited {
+    font-weight: bold;
+    color: rgb(0, 120, 231);
+}
+
+.yui3-tab-selected {
+    border: 1px solid rgb(0, 120, 231);
+    border-radius: 20px;
+}
+
+.offset-1-12 {
+    margin-left: 8.33%;
+}
+
+#media-query-table {
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+#media-query-table td {
+    padding: 0.3em;
+}
+.mq-val,
+.mq-key {
+    width: 100%;
+}
+
+.controls {
+    text-align: center;
+}
+
+.controls button {
+    margin: 0.2em 0;
+}
+
+.removeMqBtn {
+    background: white;
+    border: 1px solid rgb(229, 53, 53);
+    border-radius: 73px;
+    font-weight: 500;
+    color: rgb(229, 53, 53);
+    padding: 3px 8px;
+    box-shadow: none;
+    font-size: 80%;
+    margin-left: 0.5em;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.removeMqBtn:hover,
+.removeMqBtn:active {
+    color: white;
+    background: rgb(249, 114, 114);
+    box-shadow: none;
+}
+
+@media screen and (min-width: 48em) {
+    .controls {
+        text-align: left;
+    }
+}
