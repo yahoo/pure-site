@@ -31,6 +31,18 @@ exports.config = {
 
                 'rework-pure-grids': {
                     path: 'vendor/rework-pure-grids.js'
+                },
+
+                'grid-router': {
+                    path: 'js/grid-router.js'
+                },
+
+                'grid-model': {
+                    path: 'js/models/grid-model.js'
+                },
+
+                'grid-input-view': {
+                    path: 'js/views/grid-input-view.js'
                 }
             }
         }

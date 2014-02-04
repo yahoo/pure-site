@@ -25,7 +25,9 @@ function showStart (req, res, next) {
     }
 
     res.expose(query, 'start.query');
-    res.render('start');
+    res.render('start', {
+        query: query
+    });
 }
 
 // Takes in a string input for number of columns and converts it into an array.
@@ -89,7 +91,7 @@ function normalizeQuery (obj) {
     //remove the media query from `query`, and add it as an array element if it's valid.
     Object.keys(mq).forEach(function (key) {
         if (isValidMQ(mq[key])) {
-            query.mediaQueries.push({key: key, value: mq[key]});
+            query.mediaQueries.push({id: key, value: mq[key]});
         }
         delete query[key];
     });
