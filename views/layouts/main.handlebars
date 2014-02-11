@@ -9,7 +9,7 @@
     {{> styles}}
 
     {{> html5shiv}}
-    {{> typekit}}
+    {{!-- {{> typekit}} --}}
     {{> analytics}}
 </head>
 <body>
@@ -17,16 +17,22 @@
     <div id="layout">
         {{> menu}}
 
-        <div id="main">
+        <div class="pure-g">
+            <div id="main" class="pure-u-1 {{#hasSections}} pure-u-med-4-5 {{/hasSections}}">
+                {{{body}}}
+            </div>
 
-            {{{body}}}
+            {{#hasSections}}
+            {{> sidebar}}
+            {{/hasSections}}
 
-            <div class="footer">
+            <div class="footer pure-u-1">
                 {{> legal}}
             </div>
         </div>
     </div>
 
+    <script src="http://yui.yahooapis.com/{{yui_version}}/build/yui/yui{{min}}.js"></script>
     {{addLocalJS "/js/ui.js"}}
     {{addLocalJS "/vendor/rainbow/js/rainbow.min.js"}}
     {{addLocalJS "/vendor/rainbow/js/language/generic.js"}}
