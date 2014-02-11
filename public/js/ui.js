@@ -1,35 +1,32 @@
-(function (window, document) {
+YUI().use('node-base', 'gallery-affix', 'gallery-scrollspy', function (Y) {
+    var sidebar  = Y.one('.sidebar'),
+        layout   = Y.one('#layout'),
+        menu     = Y.one('#menu'),
+        menuLink = Y.one('#menuLink');
 
-    var layout   = document.getElementById('layout'),
-        menu     = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
+    // Create Affix (Fixes the sidebar as you scroll)
+    // Doing an if check here because we don't include a sidebar if there are
+    // no section headings.
+    if (sidebar) {
+        sidebar.plug(Y.Plugin.Affix, {
+            offset: {
+                top: 190
+            }
+        });
 
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/),
-            length = classes.length,
-            i = 0;
-
-        for(; i < length; i++) {
-          if (classes[i] === className) {
-            classes.splice(i, 1);
-            break;
-          }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
-
-        element.className = classes.join(' ');
+        // Plugin Scrollspy (Updates the sidebar with the current section heading)
+        Y.one('body').plug(Y.Plugin.ScrollSpy, {
+            target: sidebar,
+            activeClass: 'sidebar-list-item-active'
+        });
     }
 
-    menuLink.onclick = function (e) {
+    // Toggle the main site menu
+    menuLink.on('click', function (e) {
         var active = 'active';
-
         e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(menuLink, active);
-    };
-
-}(this, this.document));
+        layout.toggleClass(active);
+        menu.toggleClass(active);
+        menuLink.toggleClass(active);
+    });
+});
