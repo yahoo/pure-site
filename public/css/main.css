@@ -507,14 +507,14 @@ a.pure-button-primary {
 
     .sidebar {
         display: block;
-        top: 190px;
-        right: 2%;
-        padding-left: 2em;
+        top: 11.875em;
+        right: 0;
+        padding: 0 2em;
     }
 
     .sidebar-inner {
         text-align: right;
-        font-size: 90%;
+        font-size: 0.875em;
     }
 
     .sidebar-head {
@@ -527,7 +527,7 @@ a.pure-button-primary {
     }
 
     .sidebar-list-item {
-        padding: 0.2em 0;
+        padding: 0.15em 0;
     }
 
     .sidebar-list-item a {
