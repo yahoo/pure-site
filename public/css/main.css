@@ -120,6 +120,15 @@ aside {
         color: #666;
     }
 
+ /* --------------------------
+  * Sidebar Module Styles
+  * --------------------------
+ */
+
+.sidebar {
+    display: none;
+}
+
 
  /* --------------------------
   * Content Module Styles
@@ -493,6 +502,41 @@ a.pure-button-primary {
         margin-right: auto;
         border-left-width: 1px;
         border-right-width: 1px;
+    }
+
+
+    .sidebar {
+        display: block;
+        top: 190px;
+        right: 2%;
+    }
+
+    .sidebar-inner {
+        text-align: right;
+        font-size: 90%;
+        padding-left: 1em;
+    }
+
+    .sidebar-head {
+        margin-bottom: 0;
+    }
+
+    .sidebar-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar-list-item {
+        padding: 0.2em 0;
+    }
+
+    .sidebar-list-item a {
+        color: #999;
+    }
+
+    .sidebar-list-item-active a {
+        font-weight: bold;
+        color: #333;
     }
 
 }
