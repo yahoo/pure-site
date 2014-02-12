@@ -1,4 +1,6 @@
-YUI().use('node-base', 'gallery-affix', 'gallery-scrollspy', function (Y) {
+YUI({
+    gallery: 'gallery-2013.05.15-21-12'
+}).use('node-base', 'gallery-affix', 'gallery-scrollspy', function (Y) {
     var sidebar  = Y.one('.sidebar'),
         layout   = Y.one('#layout'),
         menu     = Y.one('#menu'),
@@ -10,14 +12,14 @@ YUI().use('node-base', 'gallery-affix', 'gallery-scrollspy', function (Y) {
     if (sidebar) {
         sidebar.plug(Y.Plugin.Affix, {
             offset: {
-                top: 190
+                top: 10
             }
         });
 
         // Plugin Scrollspy (Updates the sidebar with the current section heading)
         Y.one('body').plug(Y.Plugin.ScrollSpy, {
             target: sidebar,
-            activeClass: 'sidebar-list-item-active'
+            activeClass: 'is-sidebar-list-item-active'
         });
     }
 
