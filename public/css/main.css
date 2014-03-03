@@ -100,7 +100,6 @@ aside {
 
 .header {
      font-family: "omnes-pro", sans-serif;
-     max-width: 768px;
      margin: 0 auto;
      padding: 1em;
      text-align: center;
@@ -528,9 +527,16 @@ a.pure-button-primary {
 
 @media (min-width: 75em) {
 
-    .sidebar-wrapper {
-        padding-top: 12.5em;
+    .wrapper {
+        padding-right: 250px;
     }
+
+    .sidebar-wrapper {
+        padding-top: 2em; /* same as .content-subhead margin-top */
+        margin-right: -250px;
+        width: 250px;
+    }
+
     .sidebar {
         display: block;
         right: 0;
