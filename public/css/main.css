@@ -107,7 +107,6 @@ aside {
 
 .header {
      font-family: "omnes-pro", sans-serif;
-     max-width: 768px;
      margin: 0 auto;
      padding: 1em;
      text-align: center;
@@ -126,6 +125,15 @@ aside {
         margin: 0;
         color: #666;
     }
+
+ /* --------------------------
+  * Sidebar Module Styles
+  * --------------------------
+ */
+
+.sidebar {
+    display: none;
+}
 
 
  /* --------------------------
@@ -549,4 +557,48 @@ a.pure-button-primary {
         left: 160px;
     }
 
+}
+
+@media (min-width: 75em) {
+
+    .wrapper {
+        padding-right: 250px;
+    }
+
+    .sidebar-wrapper {
+        padding-top: 2em; /* same as .content-subhead margin-top */
+        margin-right: -250px;
+        width: 250px;
+    }
+
+    .sidebar {
+        display: block;
+        right: 0;
+        padding: 0 2em;
+        text-align: right;
+        font-size: 0.875em;
+    }
+
+    .sidebar-head {
+        margin-bottom: 0;
+    }
+
+    .sidebar-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar-list-item {
+        padding: 0.4em 0;
+        line-height: 1.2em;
+    }
+
+    .sidebar-list-item a {
+        color: #999;
+    }
+
+    .is-sidebar-list-item-active a {
+        font-weight: bold;
+        color: #333;
+    }
 }

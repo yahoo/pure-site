@@ -17,16 +17,25 @@
     <div id="layout">
         {{> menu}}
 
-        <div id="main">
+        {{> header}}
 
-            {{{body}}}
+        <div class="wrapper pure-g">
+            {{!-- <div id="main" class="pure-u-1 {{#hasSections}} pure-u-xl-3-4 {{/hasSections}}"> --}}
+            <div id="main" class="pure-u-1">
+                {{{body}}}
+            </div>
 
-            <div class="footer">
+            {{#hasSections}}
+            {{> sidebar}}
+            {{/hasSections}}
+
+            <div class="footer pure-u-1">
                 {{> legal}}
             </div>
         </div>
     </div>
 
+    <script src="http://yui.yahooapis.com/{{yui_version}}/build/yui/yui{{min}}.js"></script>
     {{addLocalJS "/js/ui.js"}}
     {{addLocalJS "/vendor/rainbow/js/rainbow.min.js"}}
     {{addLocalJS "/vendor/rainbow/js/language/generic.js"}}
