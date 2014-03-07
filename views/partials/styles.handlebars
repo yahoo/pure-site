@@ -3,7 +3,7 @@
 {{#if servePureLocally}}
 <link rel="stylesheet" href="/css/pure/pure{{min}}.css">
 {{else}}
-{{addCdnCSS pure.version "pure" min=isProduction prepend=true}}
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/{{pure.version}}/pure{{min}}.css">
 {{/if}}
 
 {{#if includePureGR}}
@@ -11,21 +11,17 @@
   {{#if servePureLocally}}
     <link rel="stylesheet" href="/css/pure/grids-responsive-old-ie{{min}}.css">
   {{else}}
-    {{addCdnCSS pure.version "grids-responsive-old-ie" min=isProduction}}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/{{pure.version}}/grids-responsive-old-ie{{min}}.css">
   {{/if}}
 <![endif]-->
 <!--[if gt IE 8]><!-->
   {{#if servePureLocally}}
     <link rel="stylesheet" href="/css/pure/grids-responsive{{min}}.css">
   {{else}}
-    {{addCdnCSS pure.version "grids-responsive" min=isProduction}}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/{{pure.version}}/grids-responsive{{min}}.css">
   {{/if}}
 <!--<![endif]-->
 {{/if}}
-
-{{#cdnCSS}}
-<link rel="stylesheet" href="{{{.}}}">
-{{/cdnCSS}}
 
 {{#localCSS}}
   {{#if this.oldIE}}
