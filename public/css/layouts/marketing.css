@@ -141,6 +141,8 @@ a.pure-button-primary {
     top: 0;
     left: 0;
     position: fixed !important;
+    /* negative z-index fixes scroll issue on iPad */
+    z-index: -1;
 }
 
 .splash {
