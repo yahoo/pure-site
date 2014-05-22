@@ -39,7 +39,8 @@ exports.modules = {
         path: 'js/views/grid-input-view.js',
         requires: [
             'grid-tab-view',
-            'event-focus'
+            'event-focus',
+            'event-valuechange'
         ]
     },
 

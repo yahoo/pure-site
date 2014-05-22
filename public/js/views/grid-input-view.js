@@ -1,4 +1,6 @@
+import 'event-valuechange';
 import {Base} from 'base-build';
+import {Escape} from 'escape';
 import {MqModel} from 'mq-model';
 import GridTabView from 'grid-tab-view';
 
@@ -15,15 +17,15 @@ var COL_INPUT      = '[data-content="cols-input"]',
 
 var events = {};
 
-events.form            = {submit: 'preventSubmit'};
-events.input           = {focus:  'showTabOnFocus'},
-events[COL_INPUT]      = {change: 'setCols'};
-events[PREFIX_INPUT]   = {change: 'setPrefix'};
-events[MQ_KEY]         = {change: 'updateMediaQueryId'};
-events[MQ_VAL]         = {change: 'updateMediaQueryValue'};
-events[MQ_ADD]         = {click:  'addMediaQuery'};
-events[MQ_REMOVE]      = {click:  'removeMediaQuery'};
-events[MQ_ADD_DEFAULT] = {click:  'setDefaultMediaQueries'};
+events.form            = {submit:      'preventSubmit'};
+events.input           = {focus:       'showTabOnFocus'},
+events[COL_INPUT]      = {valuechange: 'setCols'};
+events[PREFIX_INPUT]   = {valuechange: 'setPrefix'};
+events[MQ_KEY]         = {valuechange: 'updateMediaQueryId'};
+events[MQ_VAL]         = {valuechange: 'updateMediaQueryValue'};
+events[MQ_ADD]         = {click:       'addMediaQuery'};
+events[MQ_REMOVE]      = {click:       'removeMediaQuery'};
+events[MQ_ADD_DEFAULT] = {click:       'setDefaultMediaQueries'};
 
 export default Base.create('grid-input-view', GridTabView, [], {
     events: events,
@@ -38,13 +40,11 @@ export default Base.create('grid-input-view', GridTabView, [], {
             lastIndex = -1;
 
         if (model.get('cols')) {
-            container.one(COL_INPUT).set('value',
-                    Y.Escape.html(model.get('cols')));
+            container.one(COL_INPUT).set('value', model.getAsHTML('cols'));
         }
 
         if (model.get('prefix')) {
-            container.one(PREFIX_INPUT).set('value',
-                    Y.Escape.html(model.get('prefix')));
+            container.one(PREFIX_INPUT).set('value', model.getAsHTML('prefix'));
         }
 
         if (mqs.size()) {
@@ -79,8 +79,8 @@ export default Base.create('grid-input-view', GridTabView, [], {
         // If a row exists, populate the input fields within that row.
         // Otherwise create a new row from the template.
         if (row) {
-            row.one(MQ_KEY).set('value', Y.Escape.html(mq.get('id')));
-            row.one(MQ_VAL).set('value', Y.Escape.html(mq.get('mq')));
+            row.one(MQ_KEY).set('value', mq.getAsHTML('id'));
+            row.one(MQ_VAL).set('value', mq.getAsHTML('mq'));
         } else {
             html = this.template({
                 id: mq.get('id') || '',
@@ -137,7 +137,10 @@ export default Base.create('grid-input-view', GridTabView, [], {
     },
 
     updateMediaQueryId: function (e) {
-        if (e.target.get('invalid')) { return; }
+        if (Escape.html(e.newVal) !== e.newVal) {
+            e.target.setAttribute('invalid', true);
+            return;
+        }
 
         var mqs  = this.get('model').get('mediaQueries'),
             rows = this.get('container').all(MQ_ROW),
@@ -146,27 +149,28 @@ export default Base.create('grid-input-view', GridTabView, [], {
             val  = row.one(MQ_VAL).get('value'),
             mq   = mqs.item(rows.indexOf(row));
 
+        e.target.removeAttribute('invalid');
+
         // Update the key, and only fire the change event if there's a value
         // for the key and media query.
         mq.set('id', key, {silent: !(key && val)});
     },
 
     updateMediaQueryValue: function (e) {
-        var val = e.target.get('value');
+        var val = e.newVal;
 
-        if (!new MqModel({mq: val}).isValidMediaQuery()) {
-            e.target.setAttribute('invalid');
-        } else {
-            e.target.removeAttribute('invalid');
+        if (val && !new MqModel({mq: val}).isValidMediaQuery()) {
+            e.target.setAttribute('invalid', true);
+            return;
         }
-
-        if (e.target.get('invalid')) { return; }
 
         var mqs  = this.get('model').get('mediaQueries'),
             rows = this.get('container').all(MQ_ROW),
             row  = e.target.ancestor(MQ_ROW),
             key  = row.one(MQ_KEY).get('value'),
             mq   = mqs.item(rows.indexOf(row));
+
+        e.target.removeAttribute('invalid');
 
         // Update the key, and only fire the change event if there's a value
         // for the key and media query.
@@ -178,12 +182,22 @@ export default Base.create('grid-input-view', GridTabView, [], {
     },
 
     setCols: function (e) {
-        var cols = e.target.get('value');
-        this.get('model').set('cols', cols);
+        if (Escape.html(e.newVal) !== e.newVal) {
+            e.target.setAttribute('invalid', true);
+            return;
+        }
+
+        e.target.removeAttribute('invalid');
+        this.get('model').set('cols', e.newVal);
     },
 
     setPrefix: function (e) {
-        var prefix = e.target.get('value');
-        this.get('model').set('prefix', prefix);
+        if (Escape.html(e.newVal) !== e.newVal) {
+            e.target.setAttribute('invalid', true);
+            return;
+        }
+
+        e.target.removeAttribute('invalid');
+        this.get('model').set('prefix', e.newVal);
     }
 });
