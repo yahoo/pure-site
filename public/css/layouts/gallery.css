@@ -7,7 +7,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .l-box {
-    padding: 2em;
+    padding: 1em;
 }
 
 .header .pure-menu {
@@ -16,7 +16,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .pure-menu-link {
-    padding: 1em 1em;
+    padding: 1em .7em;
 }
 
 .photo-box, .text-box {
@@ -123,4 +123,8 @@ h1,h2,h3,h4,h5,h6 {
     .photo-box-thin {
         height: 250px;
     }
+
+    .l-box {
+    padding: 2em;
+}
 }

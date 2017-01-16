@@ -173,3 +173,5 @@ h3 {
         bottom: 0;
     }
 }
+
+div.footer > div.pure-menu.pure-menu-horizontal > ul { padding-left: 0; }
