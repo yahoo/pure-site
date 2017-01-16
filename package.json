@@ -11,7 +11,8 @@
   "author": "Tilo Mitra <tilomitra@gmail.com> (http://www.tilomitra.com/)",
   "contributors": [
     "James Alley <manalagi001@yahoo.com> (http://www.manlagi.com/)",
-    "Eric Ferraiuolo <eferraiuolo@gmail.com> (http://ericf.me/)"
+    "Eric Ferraiuolo <eferraiuolo@gmail.com> (http://ericf.me/)",
+    "Seth Bertalotto <seth@bertalotto.net> (http://seth.bertalotto.net)"
   ],
   "directories": {
     "lib": "./lib",
@@ -77,6 +78,7 @@
     "functional": "exit 0",
     "build": "grunt",
     "now-start": "NODE_ENV=production node server.js",
+    "postinstall": "grunt",
     "start": "node server.js",
     "test": "jenkins-mocha tests/unit"
   },
