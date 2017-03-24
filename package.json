@@ -50,7 +50,7 @@
     "yui": "^3.18.1"
   },
   "devDependencies": {
-    "broccoli": "^0.16.9",
+    "broccoli": "^1.1.1",
     "broccoli-filter": "^1.2.4",
     "broccoli-kitchen-sink-helpers": "^0.3.1",
     "broccoli-merge-trees": "^1.2.2",
