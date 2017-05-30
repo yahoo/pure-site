@@ -72,7 +72,7 @@
     "mocha": "^3.2.0",
     "rimraf": "^2.5.4",
     "supertest": "^3.0.0",
-    "walk-sync": "^0.3.1"
+    "walk-sync": "^0.3.2"
   },
   "scripts": {
     "functional": "exit 0",
