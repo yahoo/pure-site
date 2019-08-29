@@ -246,3 +246,18 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         left: 150px;
     }
 }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /*
+    Add transition to containers so they can push in and out.
+    */
+    #layout,
+    #menu,
+    .menu-link {
+        -webkit-transition: all 0s ease-out;
+        -moz-transition: all 0s ease-out;
+        -ms-transition: all 0s ease-out;
+        -o-transition: all 0s ease-out;
+        transition: all 0s ease-out;
+    }
+}
